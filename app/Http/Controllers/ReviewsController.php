@@ -9,7 +9,7 @@ use App\Models\Review;
 class ReviewsController extends Controller
 {
     public function getReviews(){
-        $reviews = Reviews::all();
+        $reviews = Review::all();
         return $reviews;
     }
 
