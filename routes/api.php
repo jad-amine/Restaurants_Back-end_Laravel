@@ -28,7 +28,11 @@ Route::get('/search/{name}', [RestaurantsController::class, 'getRestaurantsByNam
 //Restaurant POST
 Route::post('/add_resto', [RestaurantsController::class, 'addResto']);
 
-Route::get('/users', [UsersController::class, 'getUsers']);
+//Users GET
+Route::get('/users/{id?}', [UsersController::class, 'getUsers']);
+Route::get('/searchUsers/{name}', [UsersController::class, 'getUsersByName']);
+
+//Users POST
 Route::post('/add_user', [UsersController::class, 'addUser']);
 
 Route::get('/reviews', [ReviewsController::class, 'getReviews']);

@@ -8,9 +8,28 @@ use App\Models\Users;
 
 class UsersController extends Controller
 {
-    public function getUsers(){
-        $users = Users::all();
-        return $users;
+    public function getUsers($id = null){
+        if($id){
+            //get user by id
+            $users = Users::find($id);
+        }else{
+            //get all users
+            $users = Users::all();
+        }
+
+        return response()->json([
+            "status" => "success",
+            "users" => $users
+        ]);
+    }
+
+    public function getUsersByName($name){
+        $users = Users::where("name", "LIKE", "%$name%")->get();
+    
+        return response() -> json([
+            "status" => "success",
+            "users" => $users
+        ], 200);
     }
 
     public function addUser(Request $request){
