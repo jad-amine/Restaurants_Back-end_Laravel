@@ -35,6 +35,6 @@ Route::get('/searchUsers/{name}', [UsersController::class, 'getUsersByName']);
 //Users POST
 Route::post('/add_user', [UsersController::class, 'addUser']);
 
-Route::get('/reviews', [ReviewsController::class, 'getReviews']);
+Route::get('/reviews/{rating_value?}', [ReviewsController::class, 'getReviews']);
 Route::post('/add_review', [ReviewsController::class, 'addReview']);
 

@@ -8,9 +8,16 @@ use App\Models\Review;
 
 class ReviewsController extends Controller
 {
-    public function getReviews(){
-        $reviews = Review::all();
-        return $reviews;
+    public function getReviews($rating_value = null){
+        if($rating_value){
+            $reviews = Review::where("rating_value", "LIKE", "$rating_value")->get();
+        }else{
+            $reviews = Review::all();
+        }
+        return response()->json([
+            "status" => "success",
+            "reviews" => $reviews
+        ]);
     }
 
     public function addReview(Request $request){
