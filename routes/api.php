@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestaurantsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ReviewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/restaurants', [RestaurantsController::class, 'getRestaurants']);
 
 Route::get('/users', [UsersController::class, 'getUsers']);
+
+Route::get('/reviews', [ReviewsController::class, 'getReviews']);
 
