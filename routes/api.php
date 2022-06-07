@@ -28,4 +28,5 @@ Route::get('/users', [UsersController::class, 'getUsers']);
 Route::post('/add_user', [UsersController::class, 'addUser']);
 
 Route::get('/reviews', [ReviewsController::class, 'getReviews']);
+Route::post('/add_review', [ReviewsController::class, 'addReview']);
 
