@@ -25,6 +25,7 @@ Route::get('/restaurants', [RestaurantsController::class, 'getRestaurants']);
 Route::post('/add_resto', [RestaurantsController::class, 'addResto']);
 
 Route::get('/users', [UsersController::class, 'getUsers']);
+Route::post('/add_user', [UsersController::class, 'addUser']);
 
 Route::get('/reviews', [ReviewsController::class, 'getReviews']);
 
