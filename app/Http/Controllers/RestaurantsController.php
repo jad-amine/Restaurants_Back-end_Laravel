@@ -8,7 +8,7 @@ use App\Models\Restaurants;
 
 class RestaurantsController extends Controller
 {
-    function getRestaurants(){
+    public function getRestaurants(){
         $restos = Restaurants::all();
         return $restos;
     }
